@@ -50,7 +50,7 @@ const Winners = () => {
               ? product.images[0] 
               : 'https://images.unsplash.com/photo-1540959733332-eab4deceeaf7?auto=format&fit=crop&w=800&q=80';
             if (imageUrl.startsWith('/uploads/')) {
-              imageUrl = `http://localhost:5000${imageUrl}`;
+              imageUrl = `${import.meta.env.VITE_API_BASE_URL}${imageUrl}`;
             }
 
             return (

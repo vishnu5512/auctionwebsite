@@ -261,7 +261,7 @@ const SellerDashboard = () => {
                   const isActive = prod.status === 'active' && new Date(prod.endDate) > new Date();
                   let imageUrl = prod.images && prod.images.length > 0 ? prod.images[0] : 'https://images.unsplash.com/photo-1540959733332-eab4deceeaf7?auto=format&fit=crop&w=800&q=80';
                   if (imageUrl.startsWith('/uploads/')) {
-                    imageUrl = `http://localhost:5000${imageUrl}`;
+                    imageUrl = `${import.meta.env.VITE_API_BASE_URL}${imageUrl}`;
                   }
                   
                   return (
@@ -428,7 +428,7 @@ const SellerDashboard = () => {
                       {formImages && (
                         <div className="mt-3 position-relative d-inline-block border border-secondary rounded p-1 bg-dark bg-opacity-25" style={{ maxWidth: '150px' }}>
                           <img
-                            src={formImages.startsWith('/') ? `http://localhost:5000${formImages}` : formImages}
+                            src={formImages.startsWith('/') ? `${import.meta.env.VITE_API_BASE_URL}${formImages}` : formImages}
                             alt="Preview"
                             className="img-fluid rounded"
                             style={{ maxHeight: '100px', objectFit: 'contain' }}

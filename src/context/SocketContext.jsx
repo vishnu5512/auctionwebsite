@@ -13,7 +13,7 @@ export const SocketProvider = ({ children }) => {
 
   // Initialize Socket connection
   useEffect(() => {
-    const socketInstance = io('http://localhost:5000', {
+    const socketInstance = io(import.meta.env.VITE_API_BASE_URL, {
       autoConnect: true,
       withCredentials: true,
     });

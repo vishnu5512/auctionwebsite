@@ -203,7 +203,7 @@ const ProductDetails = () => {
               <img
                 src={
                   product.images?.[0]
-                    ? (product.images[0].startsWith('/uploads/') ? `http://localhost:5000${product.images[0]}` : product.images[0])
+                    ? (product.images[0].startsWith('/uploads/') ? `${import.meta.env.VITE_API_BASE_URL}${product.images[0]}` : product.images[0])
                     : 'https://images.unsplash.com/photo-1540959733332-eab4deceeaf7?auto=format&fit=crop&w=800&q=80'
                 }
                 alt={product.title}
@@ -218,7 +218,7 @@ const ProductDetails = () => {
                 {product.images.map((img, idx) => (
                   <div key={idx} className="border border-secondary rounded overflow-hidden bg-dark" style={{ width: '80px', height: '60px', flexShrink: 0 }}>
                     <img
-                      src={img.startsWith('/uploads/') ? `http://localhost:5000${img}` : img}
+                      src={img.startsWith('/uploads/') ? `${import.meta.env.VITE_API_BASE_URL}${img}` : img}
                       alt="Thumbnail"
                       className="w-100 h-100"
                       style={{ objectFit: 'cover' }}
