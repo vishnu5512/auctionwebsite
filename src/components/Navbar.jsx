@@ -25,7 +25,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-secondary border-bottom border-secondary sticky-top px-lg-4">
+    <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top px-lg-4" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
       <div className="container-fluid">
         <Link className="navbar-brand d-flex align-items-center fw-bold fs-3" to="/">
           <FaGavel className="text-info me-2 fs-4" />
